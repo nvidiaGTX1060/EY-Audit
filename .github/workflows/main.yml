@@ -1,4 +1,4 @@
-name: Mi primer workflow manual
+name: Testear YAML sin errores
 
 on:
   workflow_dispatch:
@@ -6,10 +6,11 @@ on:
       mensaje:
         description: 'Escribe un mensaje para mostrar'
         required: false
+        default: '¡Hola, este es un test sin errores!'
 
 jobs:
   mostrar-mensaje:
     runs-on: ubuntu-latest
     steps:
-      - name: Mostrar el mensaje que escribiste
+      - name: Mostrar el mensaje
         run: echo "Tu mensaje fue: ${{ github.event.inputs.mensaje }}"
